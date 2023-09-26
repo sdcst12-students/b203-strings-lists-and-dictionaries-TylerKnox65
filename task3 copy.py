@@ -25,13 +25,18 @@ def sortValue():
   global sortMe
   temp = []
   for i in sortMe:
-    temp.append(i)
+    temp.append(sortMe[i])
   temp.sort()
-  tempReturn = []
+  tempreturn = []
   for i in temp:
-    tempReturn.append(sortMe[i])
-  tempReturn.sort()
-  return tempReturn
+    tempreturn.append(get_key(temp[i]))
+  return tempreturn
+
+def get_key(val):
+   
+    for key, value in sortMe.items():
+        if val == value:
+            return key
 
 
 print(sortValue())
